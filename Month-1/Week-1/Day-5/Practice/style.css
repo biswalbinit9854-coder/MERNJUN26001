@@ -1,0 +1,77 @@
+h1{
+
+    background-color: brown;
+}
+#paragraph{
+    background-color: cyan;
+}
+
+.p1{
+    color: blue;
+    background-color: brown;
+}
+#paragraph, .p1{
+    font-style: italic;
+}
+
+{
+    font-family: 'Gil Sans', 'gill Sans MT', calibri,'Trebuchet MS',sans-serif;
+}
+
+.parent p{
+
+   background-color: crimson;
+}
+.parent>p{
+
+     color: blue;
+}
+.parent + div{
+
+    color: blue;
+}
+.parent ~ div{
+
+   background-color: bisque;
+}
+/* pseudo class selector
+    ->hover
+    ->active 
+    ->focus
+    ->nth-child
+*/
+
+section{
+    width: 100px;
+    height: 50;
+    background-color: violet;
+}
+section:hover{
+    background-color: coral;
+}
+section:active{
+    background-color: cyan;
+}
+input:focus{
+    background-color: yellow;
+}
+li:first-child{
+    color: rgb(116, 79, 10);
+}
+li:last-child{
+    color: pink;
+}   
+li:nth-child(2){
+    color: purple;
+}
+*{
+    box-sizing: border-box;
+}
+/* box-model */
+.box{
+    width: 100px;
+    height: 100px;
+    padding: 10px 5px;
+    border: 10px dotted rgb(143, 15, 47);
+    margin: 10px 0px;
+}
