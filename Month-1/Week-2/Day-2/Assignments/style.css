@@ -1,0 +1,70 @@
+body{
+    background:#eee;
+    font-family:Arial;
+}
+
+.navbar{
+    width:90%;
+    margin:50px auto;
+    background:black;
+    padding:15px;
+    border-radius:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+}
+
+.btn{
+    background:yellowgreen;
+    color:black;
+    padding:8px 15px;
+    border-radius:20px;
+}
+
+
+
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(to right,#5aa9ff,#a64dff);
+    font-family:Arial;
+}
+
+.login-box{
+    background:white;
+    padding:40px;
+    width:250px;
+    border-radius:10px;
+    text-align:center;
+}
+
+input{
+    width:100%;
+    border:none;
+    border-bottom:1px solid gray;
+    margin:15px 0;
+    padding:10px;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    color:white;
+    background:linear-gradient(to right,#5aa9ff,#a64dff);
+}
