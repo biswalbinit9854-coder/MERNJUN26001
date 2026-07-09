@@ -19,8 +19,7 @@ function RegisterForm() {
     localStorage.setItem("formData",JSON.stringify(formData));
   }
   function handleReset(){
-    
-   localStorage.setItem("formData",JSON.stringify(formData));
+     localStorage.setItem("formData",JSON.stringify(formData));
   }
   
   return (
