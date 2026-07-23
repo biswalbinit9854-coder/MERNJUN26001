@@ -1,12 +1,12 @@
-const express =require("express");
+const express = require("express");
 
 const { createuser } = require("../controllers/userController");
 
 
 
-const router =express.Router();
+const router = express.Router();
 
-router.post("/create",createuser);
+router.post("/create", createuser);
 
 
 

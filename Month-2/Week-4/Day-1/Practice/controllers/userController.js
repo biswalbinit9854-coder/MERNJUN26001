@@ -1,7 +1,7 @@
-exports.createuser=async(req,res)=>{
-    try{
+exports.createuser = async (req, res) => {
+    try {
 
-    }catch(error){
-        
+    } catch (error) {
+
     }
 }
