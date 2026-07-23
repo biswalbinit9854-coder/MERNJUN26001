@@ -6,11 +6,12 @@ const userRoute = require("./routes/userRoute")
 
 const server = express();
 
+server.use(express.json());
 connectDb();
 
 server.use("/user", userRoute);
 
-server.use("/run", (req, res) => {
+server.get("/run", (req, res) => {
   res.send("hello app is running");
 });
 
