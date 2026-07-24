@@ -19,7 +19,11 @@ const userSchema = new mongoose.Schema({
         type: Number,
         required: true
     }
-});
+}, {
+    versionKey: false,
+    timestamps: true
+}
+);
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;
