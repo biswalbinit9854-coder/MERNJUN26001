@@ -1,20 +1,20 @@
+
 const express = require("express");
 const connectDb = require("./config/db");
 const dotenv = require("dotenv");
 dotenv.config();
-const userRoute = require("./routes/userRoute")
+const userRoute =require("./routes/userRoute")
 
 const server = express();
-
 server.use(express.json());
 connectDb();
 
-server.use("/user", userRoute);
+server.use("/user",userRoute);
 
-server.get("/run", (req, res) => {
-  res.send("hello app is running");
+server.use("/run", (req, res) => {
+  res.send("APP IS RUNNING");
 });
 
 server.listen(8000, () => {
-  console.log("my server is running ha Ha Ha Bye ...");
+  console.log("SERVER IS STARTED...");
 });

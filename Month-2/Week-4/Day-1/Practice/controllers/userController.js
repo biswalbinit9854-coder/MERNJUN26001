@@ -1,19 +1,22 @@
 const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken")
 
 exports.createUser = async (req, res) => {
   try {
-    // fetch the data from the req.body
-    // validate all the field i.e all field data are coming or not
-    // covert the password to hash format (by bcrypt)
-    // save the user
-    // send the proper view ( data with message)
+    console.log("Request Body:", req.body);
     const { fullName, age, email, password } = req.body;
+    console.log({
+      fullName,
+      age,
+      email,
+      password,
 
+    });
     if (!fullName || !age || !email || !password) {
       return res
-        .status(500)
-        .json({ success: false, message: "kindly fill all the field" });
+        .status(400)
+        .json({ success: false, message: "KINDLY FILL ALL THE FIELD" });
     }
 
     bcrypt.hash(password, 10, async function (err, hash) {
@@ -27,7 +30,51 @@ exports.createUser = async (req, res) => {
   } catch (error) {
     return res
       .status(500)
-      .json({ success: false, message: "failed to create" });
+      .json({ success: false, message: "FAILED TO CREATE" });
+  }
+};
+exports.loginUser = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res
+        .status(500)
+        .json({ success: false, message: "KINDLY FILL ALL THE FIELD" })
+    }
+    const existingUser = await User.findOne({ email });
+
+    if (existingUser) {
+      bcrypt.compare(
+        password, existingUser.password,
+        async function (err, result) {
+          if (result === true) {
+            let token = await jwt.sign(
+              {
+                userId: existingUser._id,
+              },
+              process.env.SECRET_KEY,
+              { expiresIn: "1h" },
+            );
+            return res
+              .status(200)
+              .json({ success: false, message: "LOGIN SUCCESS", token });
+          } else {
+            return res
+              .status(404)
+              .json({ success: false, message: "INVALID PASSWORD" });
+          }
+        },
+      );
+    } else {
+      return res
+        .status(404)
+        .json({ success: false, message: "INVALID E-MAIL" });
+    }
+  }
+  catch (error) {
+    return res
+      .status(500)
+      .json({ success: false, message: "FAILED TO CREATE" });
   }
 };
 

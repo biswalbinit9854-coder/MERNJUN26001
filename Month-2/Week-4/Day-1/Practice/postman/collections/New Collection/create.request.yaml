@@ -1,0 +1,20 @@
+$kind: http-request
+name: create
+url: http://localhost:5000/user/create
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \   \" fullName\":\"binit\",\r
+
+    \    \"age\":\"26\",\r
+
+    \    \"email\":\"binit@gmail.com\",\r
+
+    \    \"password\":\"29389\",\r
+
+    \    \"phone\":\"5225366636\"\r
+
+    }"
+order: 1784915543497
